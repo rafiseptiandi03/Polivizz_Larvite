@@ -1,0 +1,421 @@
+/* Tambahan CSS umum untuk Card */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.card-body {
+    padding: 2rem; /* Menambah padding dalam card */
+}
+
+/* Halaman Users */
+/* Styles khusus untuk halaman Users */
+.users-container {
+    padding: 20px;
+}
+
+/* Gaya header di halaman Users */
+.users-container .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Tombol Add New User */
+.btn-add {
+    padding: 8px 12px;
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-add:hover {
+    background-color: #084298;
+    text-decoration: none;
+}
+
+/* Menyembunyikan garis tabel di versi mobile */
+.user-table {
+    width: 100%;
+}
+
+/* Mengatur ukuran dan padding tombol di Action */
+.user-table .btn {
+    padding: 4px 10px;
+}
+
+/* Animasi loading */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+/* Halaman UserForm */
+/* Styles khusus untuk halaman UserForm */
+.user-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Halaman Login & Registrasi */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    background: url("./assets/bgc.png") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.login-signup-form {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0px 40px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #1d605e;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(165, 26, 26, 0.1);
+}
+
+/* Logo tanpa animasi */
+.logo-image {
+    display: block;
+    margin: 0 auto 15px;
+    width: 100px;
+    height: auto;
+    opacity: 0.9;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.input-group-text {
+    background: #1d605e;
+    color: #d4af37;
+    border: none;
+}
+
+.input-group-text:hover {
+    color: #ffffff;
+}
+
+/* Tombol tanpa animasi */
+.btn-secondary {
+    background: #1d605e;
+    color: #ffffff;
+    border: none;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 50px;
+}
+
+.btn-secondary:hover {
+    background: #104d48;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.message .link {
+    color: #c82020;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.message .link:hover {
+    text-decoration: underline;
+}
+
+/* index.css */
+
+.app-content {
+    padding: 20px;
+}
+
+.landing-hero {
+    background-image: url("./assets/bgc.png");
+    background-color: #1c3f27;
+    background-size: cover;
+    background-position: center;
+    color: #ecf0f1;
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+.hero-btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+}
+
+.info-section {
+    margin-top: 50px;
+}
+
+.info-card {
+    background-color: #2e594b;
+    color: #ecf0f1;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card-icon.clicked {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+    background-color: #1c1c1e;
+    color: #ecf0f1;
+    padding: 1rem;
+}
+
+.info-card-icon svg {
+    color: #f5c518;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.landing-hero h1,
+.landing-hero p,
+.landing-hero .btn-primary {
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+.landing-hero .btn-primary {
+    transition: transform 0.3s ease;
+}
+
+.landing-hero .btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.info-card-title {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #f39c12;
+}
+
+.info-card p {
+    font-family: "Raleway", sans-serif;
+    font-style: oblique;
+    font-weight: 200;
+    font-size: 1rem;
+    color: #000000;
+}
+
+/* Tampilan Latar Belakang */
+body.landing-page {
+    font-family: "Poppins", sans-serif;
+    background: url("./assets/bgc.png") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Kontainer Form */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Login atau Signup Form */
+.landing-page .login-signup-form {
+    max-width: 400px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.landing-page .title {
+    font-size: 28px;
+    color: #2e4630; /* Hijau tua */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Input Group */
+.landing-page .input-group-text {
+    background-color: #2e4630; /* Hijau tua */
+    color: #ffffff;
+    border: none;
+}
+
+.landing-page .input-group .form-control {
+    border: 2px solid #2e4630; /* Hijau tua */
+    box-shadow: none;
+    border-radius: 5px;
+}
+
+.landing-page .input-group .form-control:focus {
+    border-color: #2e4630; /* Hijau tua */
+    box-shadow: 0px 0px 8px rgba(46, 70, 48, 0.3);
+}
+
+/* Tombol */
+.landing-page .btn-secondary {
+    background-color: #2e4630;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 25px;
+    width: 100%;
+    padding: 12px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.landing-page .btn-secondary:hover {
+    background-color: #254f3c;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Pesan Sudah Terdaftar */
+.landing-page .message {
+    font-size: 1rem;
+    color: #2e4630;
+}
+
+.landing-page .message .link {
+    color: #ff0000;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.landing-page .message .link:hover {
+    text-decoration: underline;
+}
+
+/* Landing Page Hero Section */
+.landing-hero {
+    background-color: #1c3f27;
+    color: #ecf0f1;
+    padding: 3rem 2rem;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 20px;
+    min-height: 100px;
+}
+
+.landing-hero .description-box {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    line-height: 1.5;
+    background-color: rgba(28, 63, 39, 0.9);
+    border-radius: 8px;
+}
+
+.landing-hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #f5c518;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.landing-hero .lead.description-box {
+    font-family: "Norwester", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.landing-hero .btn-primary {
+    background-color: #243cd9;
+    border: none;
+}
+
+.landing-hero .btn-primary:hover {
+    background-color: #0942a7;
+}
+
+/* Info Card */
+.landing-page .info-card {
+    background-color: #2e594b;
+    color: #ecf0f1;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.landing-page .info-card-title {
+    color: #f39c12;
+    font-family: "Playfair Display", serif;
+}
+
+/* Footer */
+.footer {
+    background-color: transparent;
+    color: #000000;
+    padding: 1rem;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+/* Font untuk Info Card */
+.landing-page .info-card p {
+    color: #000000;
+    font-family: "Quicksand", sans-serif;
+}
+
+/* Text Box Deskripsi */
+.landing-page .description-box {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.profile-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Memberi jarak bawah */
+}
+
+.profile-image {
+    width: 150px; /* Atur ukuran gambar */
+    height: 200px;
+    border-radius: 50%; /* Membuat gambar menjadi lingkaran */
+    object-fit: cover; /* Agar gambar sesuai dengan wadah lingkaran */
+    border: 2px solid #ddd; /* Tambahkan border opsional */
+}
