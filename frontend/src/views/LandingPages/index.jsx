@@ -17,9 +17,11 @@ export default function MapsGuest() {
                     </Container>
                 </Navbar>
             ))}
-            <div className="text-center">
-                <h3>LOKASI LAHAN JURUSAN BUDIDAYA TANAMAN PERKEBUNAN</h3>
-            </div>
+            <Card>
+                <h4 className="text-center">
+                    LOKASI LAHAN JURUSAN BUDIDAYA TANAMAN PERKEBUNAN
+                </h4>
+            </Card>
             <br />
             <Card>
                 <Card.Body>

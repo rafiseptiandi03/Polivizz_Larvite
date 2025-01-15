@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axiosClient from "../../axiosClient";
-import { Container, Row, Col, Table, Spinner } from "react-bootstrap";
+import { Container, Row, Col, Table, Spinner, Card } from "react-bootstrap";
 
 export default function PerkebunanMahasiswa() {
     const [perkebunan, setPerkebunan] = useState([]);
@@ -23,10 +23,13 @@ export default function PerkebunanMahasiswa() {
     };
 
     return (
-        <Container className="mt-4">
-            <Row className="align-items-center mb-3">
+        <Container className="mt-2">
+            <Row className="align-items-center">
                 <Col>
-                    <h4>Info Perkebunan</h4>
+                    <Card>
+                        <h3 className="text-center">Info Perkebunan</h3>
+                    </Card>
+                    <br />
                 </Col>
             </Row>
             <Row>
@@ -36,10 +39,19 @@ export default function PerkebunanMahasiswa() {
                             <Spinner animation="border" role="status" />
                         </div>
                     ) : (
-                        <Table striped bordered hover responsive>
-                            <thead>
+                        <Table
+                            striped
+                            bordered
+                            hover
+                            responsive
+                            style={{
+                                backgroundColor: "#f8f9fa", // Light background color
+                                color: "#333", // Dark text color
+                            }}
+                        >
+                            <thead className="table-dark">
                                 <tr>
-                                    <th>No</th>
+                                    <th className="text-center">No</th>
                                     <th>Nama Lahan</th>
                                     <th>Jenis Tanaman</th>
                                     <th>Status Pertumbuhan</th>
@@ -49,7 +61,9 @@ export default function PerkebunanMahasiswa() {
                                 {perkebunan.length > 0 ? (
                                     perkebunan.map((kebun, index) => (
                                         <tr key={kebun.id}>
-                                            <td>{index + 1}</td>
+                                            <td className="text-center">
+                                                {index + 1}
+                                            </td>
                                             <td>{kebun.namalahan}</td>
                                             <td>{kebun.jenistanaman}</td>
                                             <td>{kebun.statuspertumbuhan}</td>

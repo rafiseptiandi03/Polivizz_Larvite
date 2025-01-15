@@ -52,10 +52,20 @@ export default function Users() {
                     </Spinner>
                 </div>
             ) : (
-                <Table striped bordered hover responsive className="user-table">
-                    <thead>
+                <Table
+                    striped
+                    bordered
+                    hover
+                    responsive
+                    className="user-table"
+                    style={{
+                        backgroundColor: "#f8f9fa", // Light background color
+                        color: "#333", // Dark text color
+                    }}
+                >
+                    <thead className="table-dark">
                         <tr>
-                            <th>No</th>
+                            <th className="text-center">No</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Hak Akses</th>
@@ -66,7 +76,7 @@ export default function Users() {
                         {users.length > 0 ? (
                             users.map((user, index) => (
                                 <tr key={user.id}>
-                                    <td>{index + 1}</td>
+                                    <td className="text-center">{index + 1}</td>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
                                     <td>{user.role}</td>
@@ -90,7 +100,9 @@ export default function Users() {
                             ))
                         ) : (
                             <tr>
-                                <td colSpan="5">No users found</td>
+                                <td colSpan="5" className="text-center">
+                                    No users found
+                                </td>
                             </tr>
                         )}
                     </tbody>

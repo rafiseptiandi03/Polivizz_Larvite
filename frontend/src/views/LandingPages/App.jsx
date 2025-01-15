@@ -14,18 +14,18 @@ function App() {
     const cards = [
         {
             title: "Visualisasi Lahan",
-            text: "Menampilkan Visualisasi lahan untuk melihat distribusi dan potensi area yang mendukung jenis tanaman tertentu.",
+            text: "Menampilkan Visualisasi lahan dan potensi area yang mendukung jenis tanaman tertentu.",
             icon: <FaMapMarkedAlt size={70} />,
         },
         {
-            title: "Manajemen Pengelolaan Tanaman",
-            text: "Informasi Pengelolaan serta kegiatan perawatan tanaman, pemupukan, dan status perkembangan tanaman agar budidaya lebih optimal.",
-            icon: <FaTools size={70} />,
+            title: "Ajukan Peminjaman Lahan",
+            text: "Formulir pengajuan untuk peminjaman lahan, dilengkapi dengan detail kebutuhan dan tujuan penggunaan lahan.",
+            icon: <FaTree size={70} />,
         },
         {
-            title: "Informasi Jenis Tanaman",
-            text: "Menyediakan data jenis tanaman, karakteristik, dan kebutuhan perawatannya untuk mempermudah pemilihan sesuai kondisi lahan.",
-            icon: <FaTree size={70} />,
+            title: "Tentang Lahan",
+            text: "Informasi Pengelolaan Lahan yang ada, dan status perkembangan yang optimal.",
+            icon: <FaTools size={70} />,
         },
     ];
 
@@ -40,16 +40,14 @@ function App() {
                             <h1 className="display-4">
                                 POLINELA VISUALIZATION
                             </h1>
-                            <p className="lead description-box">
-                                Platform digital premium yang dirancang khusus
-                                untuk pemetaan lahan dan manajemen informasi
-                                lahan secara terstruktur dan komprehensif.
-                                Dengan fitur canggih, POLINELA Visualization
-                                membantu mahasiswa dan peneliti dalam mengakses
-                                data lahan dengan mudah, serta memberikan
-                                visualisasi yang akurat dan terkini untuk
-                                mendukung pengambilan keputusan yang lebih
-                                tepat.
+                            <p className="mt-5 description-box">
+                                Platform yang dirancang khusus untuk pemetaan
+                                lahan dan manajemen informasi lahan. Dengan
+                                fitur canggih, POLINELA VISUALIZATION membantu
+                                mahasiswa mengakses data lahan dengan mudah,
+                                serta memberikan visualisasi yang akurat dan
+                                terkini untuk mendukung pengambilan keputusan
+                                yang lebih tepat.
                             </p>
                             <Button
                                 href="/lokasi"
