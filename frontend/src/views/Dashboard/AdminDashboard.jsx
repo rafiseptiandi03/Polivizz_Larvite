@@ -7,10 +7,15 @@ import { FaUsers, FaClipboardList, FaSeedling } from "react-icons/fa";
 function AdminDashboard() {
     return (
         <>
-            <h2 className="mb-4">Dashboard Admin</h2>
-
-            {/* Row for Statistics */}
-            <Row className="mb-4">
+            <Card className="text-center shadow-sm border-0">
+                <h3 className="fw-bold text-dark">Halo, Admin</h3>
+                <p className="text-secondary">
+                    Selamat datang di <strong>POLIVIZ</strong>! Kelola lahan dan
+                    data untuk memastikan kelancaran operasional!
+                </p>
+            </Card>
+            <br />
+            <Row className="mb-5">
                 <Col md={6} lg={4}>
                     <Card className="text-center shadow-sm border-0">
                         <Card.Body>
@@ -19,7 +24,6 @@ function AdminDashboard() {
                                 className="mb-2 text-success"
                             />
                             <Card.Title>Data Perkebunan</Card.Title>
-                            <Card.Text>25 Data Kebun</Card.Text>
                             <Link
                                 to="/admin/perkebunan"
                                 className="btn btn-success"
@@ -37,7 +41,6 @@ function AdminDashboard() {
                                 className="mb-2 text-warning"
                             />
                             <Card.Title>Data Peminjaman</Card.Title>
-                            <Card.Text>12 Peminjaman</Card.Text>
                             <Link
                                 to="/admin/daftar-pengajuan"
                                 className="btn btn-warning"
@@ -52,7 +55,6 @@ function AdminDashboard() {
                         <Card.Body>
                             <FaUsers size={40} className="mb-2 text-primary" />
                             <Card.Title>Total Pengguna</Card.Title>
-                            <Card.Text>20 Pengguna</Card.Text>
                             <Link to="/admin/users" className="btn btn-primary">
                                 Lihat Data
                             </Link>
@@ -60,7 +62,6 @@ function AdminDashboard() {
                     </Card>
                 </Col>
             </Row>
-
             <div>
                 <Card>
                     <h4 className="text-center">Visualisasikan Lahan</h4>

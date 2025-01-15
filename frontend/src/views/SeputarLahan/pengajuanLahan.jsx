@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import Table from 'react-bootstrap/Table';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
+import React, { useState, useEffect } from "react";
+import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import Form from "react-bootstrap/Form";
 import axiosClient from "../../axiosClient"; // Pastikan Anda sudah memiliki konfigurasi axiosClient
 
 export default function Pengajuan() {
@@ -63,9 +63,15 @@ export default function Pengajuan() {
             if (modalType === "create") {
                 await axiosClient.post("/pengajuan", data);
             } else if (modalType === "edit") {
-                console.log("Editing pengajuan with keterangan:", formData.bukti);
+                console.log(
+                    "Editing pengajuan with keterangan:",
+                    formData.bukti
+                );
 
-                const response = await axiosClient.post(`/pengajuan/${selectedId}`, data);
+                const response = await axiosClient.post(
+                    `/pengajuan/${selectedId}`,
+                    data
+                );
                 console.log("Response from edit:", data);
             }
 
@@ -82,8 +88,6 @@ export default function Pengajuan() {
         }
     };
 
-
-
     const handleDelete = async (id) => {
         try {
             await axiosClient.delete(`/pengajuan/${id}`);
@@ -95,37 +99,82 @@ export default function Pengajuan() {
 
     const renderStatusBadge = (status) => {
         switch (status) {
-            case 'dalam proses validasi':
-                return <span className="badge bg-warning text-dark">Dalam Proses Validasi</span>;
-            case 'disetujui':
+            case "dalam proses validasi":
+                return (
+                    <span className="badge bg-warning text-dark">
+                        Dalam Proses Validasi
+                    </span>
+                );
+            case "disetujui":
                 return <span className="badge bg-success">Disetujui</span>;
-            case 'ditolak':
+            case "ditolak":
                 return <span className="badge bg-danger">Ditolak</span>;
             default:
                 return <span className="badge bg-secondary">Unknown</span>;
         }
     };
 
-
-
     return (
         <div>
-            <h2>Data Pengajuan</h2>
+            <h2 className="mb-4">Data Pengajuan</h2>
+
+            <h6 className="mb-2">Informasi (WAJIB DIBACA!)</h6>
+
+            {/* Informasi Peminjaman */}
+            <div style={{ fontSize: "14px", marginBottom: "20px" }}>
+                <ul>
+                    <li>
+                        Pengajuan peminjaman lahan yang diajukan melalui menu{" "}
+                        <strong>Pengajuan Peminjaman</strong> akan divalidasi
+                        oleh admin.
+                    </li>
+                    <li>Silakan unduh form peminjaman yang tersedia</li>
+                    <li>
+                        Isi form tersebut dengan jelas dan benar sebelum
+                        melanjutkan proses.
+                    </li>
+                    <li>
+                        Unggah bukti peminjaman setelah form terisi dengan benar
+                        melalui tombol<strong> +Tambah Pengajuan</strong>.
+                    </li>
+                    <li>
+                        Setelah bukti peminjaman diunggah, admin akan
+                        memvalidasi data yang Anda kirimkan. Jika validasi
+                        berhasil, maka status peminjaman akan{" "}
+                        <strong>Disetujui</strong>
+                    </li>
+                </ul>
+            </div>
 
             <Button
-                variant="primary" className="mb-3" style={{ float: "right" }}
+                variant="primary"
+                className="mb-3"
+                style={{ float: "right" }}
                 onClick={() => handleModalOpen("create")}
             >
-                Tambah Pengajuan
+                +Tambah Pengajuan
             </Button>
-            <Button variant="danger" size="sm"
-                href={`http://127.0.0.1:8000/template/Form_Peminjaman_Lahan.pdf`} target="_blank">
+            <Button
+                className="mt-3"
+                variant="danger"
+                size="sm"
+                href={`http://127.0.0.1:8000/template/Form_Peminjaman_Lahan.pdf`}
+                target="_blank"
+            >
                 Download Form
             </Button>
-            <Table striped bordered hover>
-                <thead>
+            <Table
+                striped
+                bordered
+                hover
+                style={{
+                    backgroundColor: "#f8f9fa", // Warna latar belakang terang pada tabel
+                    color: "#333", // Warna teks lebih gelap
+                }}
+            >
+                <thead className="table-dark">
                     <tr>
-                        <th>No</th>
+                        <th className="text-center">No</th>
                         <th>Mahasiswa</th>
                         <th>Keterangan</th>
                         <th>Bukti</th>
@@ -136,30 +185,35 @@ export default function Pengajuan() {
                 <tbody>
                     {pengajuan.map((item, index) => (
                         <tr key={item.id}>
-                            <td>{index + 1}</td>
+                            <td className="text-center">{index + 1}</td>
                             <td>{item.user ? item.user.name : "Tidak Ada"}</td>
                             <td>{item.keterangan}</td>
                             <td>
                                 {item.bukti ? (
-                                    <Button variant="primary" href={`http://127.0.0.1:8000/storage/bukti/${item.bukti}`} target="_blank" rel="noopener noreferrer">
+                                    <Button
+                                        variant="primary"
+                                        href={`http://127.0.0.1:8000/storage/bukti/${item.bukti}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        size="sm"
+                                    >
                                         Lihat Bukti
                                     </Button>
                                 ) : (
                                     "Tidak Ada"
                                 )}
                             </td>
-                            <td>
-                                {renderStatusBadge(item.status)}{" "}
-                            </td>
+                            <td>{renderStatusBadge(item.status)} </td>
                             <td>
                                 <Button
                                     variant="warning"
                                     size="sm"
-                                    onClick={() => handleModalOpen("edit", item)}
+                                    onClick={() =>
+                                        handleModalOpen("edit", item)
+                                    }
                                 >
                                     Edit
-                                </Button>
-                                {" "}
+                                </Button>{" "}
                                 <Button
                                     variant="danger"
                                     size="sm"
@@ -177,13 +231,19 @@ export default function Pengajuan() {
             <Modal show={showModal} onHide={handleModalClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>
-                        {modalType === "create" ? "Tambah Pengajuan" : "Edit Pengajuan"}
+                        {modalType === "create"
+                            ? "Tambah Pengajuan"
+                            : "Edit Pengajuan"}
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
                         <Form.Group className="mb-3">
-                            <Form.Label style={{ float: "left", textAlign: "left" }}>Keterangan</Form.Label>
+                            <Form.Label
+                                style={{ float: "left", textAlign: "left" }}
+                            >
+                                Keterangan
+                            </Form.Label>
                             <Form.Control
                                 type="text"
                                 name="keterangan"
@@ -193,19 +253,35 @@ export default function Pengajuan() {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label style={{ float: "left", textAlign: "left" }}>Bukti</Form.Label>
+                            <Form.Label
+                                style={{ float: "left", textAlign: "left" }}
+                            >
+                                Bukti
+                            </Form.Label>
                             <Form.Control
                                 type="file"
                                 name="bukti"
                                 accept=".png, .jpg, .jpeg, .pdf"
                                 onChange={(e) => {
                                     const file = e.target.files[0];
-                                    const allowedTypes = ['image/png', 'image/jpeg', 'application/pdf'];
+                                    const allowedTypes = [
+                                        "image/png",
+                                        "image/jpeg",
+                                        "application/pdf",
+                                    ];
 
-                                    if (file && allowedTypes.includes(file.type)) {
-                                        setFormData({ ...formData, bukti: file });
+                                    if (
+                                        file &&
+                                        allowedTypes.includes(file.type)
+                                    ) {
+                                        setFormData({
+                                            ...formData,
+                                            bukti: file,
+                                        });
                                     } else {
-                                        alert("Hanya file gambar (PNG, JPG, JPEG) atau PDF yang diperbolehkan.");
+                                        alert(
+                                            "Hanya file gambar (PNG, JPG, JPEG) atau PDF yang diperbolehkan."
+                                        );
                                     }
                                 }}
                             />

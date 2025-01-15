@@ -419,3 +419,19 @@ body.landing-page {
     object-fit: cover; /* Agar gambar sesuai dengan wadah lingkaran */
     border: 2px solid #ddd; /* Tambahkan border opsional */
 }
+
+/* Sidebar */
+.menu-link {
+    transition: all 0.3s ease;
+}
+
+.menu-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px; /* Efek rounded */
+}
+
+.active-link {
+    font-weight: bold; /* Teks lebih tebal */
+    background-color: rgba(255, 255, 255, 0.2); /* Highlight background */
+    border-radius: 5px;
+}

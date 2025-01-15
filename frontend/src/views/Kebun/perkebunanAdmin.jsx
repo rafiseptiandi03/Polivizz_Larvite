@@ -70,10 +70,19 @@ export default function PerkebunanAdmin() {
                             <span className="ms-2">Loading data...</span>
                         </div>
                     ) : (
-                        <Table striped bordered hover responsive>
-                            <thead>
+                        <Table
+                            striped
+                            bordered
+                            hover
+                            responsive
+                            style={{
+                                backgroundColor: "#f8f9fa", // Light background color
+                                color: "#333", // Dark text color
+                            }}
+                        >
+                            <thead className="table-dark">
                                 <tr>
-                                    <th>No</th>
+                                    <th className="text-center">No</th>
                                     <th>Nama Lahan</th>
                                     <th>Jenis Tanaman</th>
                                     <th>Status Pertumbuhan</th>
@@ -84,7 +93,9 @@ export default function PerkebunanAdmin() {
                                 {perkebunan.length > 0 ? (
                                     perkebunan.map((kebun) => (
                                         <tr key={kebun.id}>
-                                            <td>{kebun.id}</td>
+                                            <td className="text-center">
+                                                {kebun.id}
+                                            </td>
                                             <td>{kebun.namalahan}</td>
                                             <td>{kebun.jenistanaman}</td>
                                             <td>{kebun.statuspertumbuhan}</td>
